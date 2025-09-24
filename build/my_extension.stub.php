@@ -4,17 +4,6 @@
 
 namespace My\Extension;
 
-/**
- * @var int
- */
-const STATUS_ACTIVE = 1;
-
-class User {
-
-    public function __construct() {}
-
-    public function getName(): string {}
-
-}
+function repeat_this(string $str, int $count, bool $reverse): string {}
 
 

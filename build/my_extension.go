@@ -5,51 +5,29 @@ package my_extension
 #include "my_extension.h"
 */
 import "C"
+import "github.com/dunglas/frankenphp"
+import "strings"
 
 func init() {
 	frankenphp.RegisterExtension(unsafe.Pointer(&C.my_extension_module_entry))
 }
-const STATUS_ACTIVE = 1
 
 
 
 
-type UserStruct struct {
-}
+//export repeat_this
+func repeat_this(s *C.zend_string, count int64, reverse bool) unsafe.Pointer {
+    str := frankenphp.GoString(unsafe.Pointer(s))
 
-//export registerGoObject
-func registerGoObject(obj interface{}) C.uintptr_t {
-	handle := cgo.NewHandle(obj)
-	return C.uintptr_t(handle)
-}
+    result := strings.Repeat(str, int(count))
+    if reverse {
+        runes := []rune(result)
+        for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+            runes[i], runes[j] = runes[j], runes[i]
+        }
+        result = string(runes)
+    }
 
-//export getGoObject
-func getGoObject(handle C.uintptr_t) interface{} {
-	h := cgo.Handle(handle)
-	return h.Value()
-}
-
-//export removeGoObject
-func removeGoObject(handle C.uintptr_t) {
-	h := cgo.Handle(handle)
-	h.Delete()
-}
-//export create_UserStruct_object
-func create_UserStruct_object() C.uintptr_t {
-	obj := &UserStruct{}
-	return registerGoObject(obj)
-}
-func (u *UserStruct) GetName() unsafe.Pointer {
-    return frankenphp.PHPString("John Doe", false)
-}
-
-//export getName_wrapper
-func getName_wrapper(handle C.uintptr_t) unsafe.Pointer {
-	obj := getGoObject(handle)
-	if obj == nil {
-		return nil
-	}
-	structObj := obj.(*UserStruct)
-	return structObj.GetName()
+    return frankenphp.PHPString(result, false)
 }
 

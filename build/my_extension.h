@@ -7,7 +7,5 @@
 extern zend_module_entry my_extension_module_entry;
 
 
-/* User defined constants */
-#define STATUS_ACTIVE 1
 
 #endif
