@@ -100,7 +100,7 @@ PHP_MINIT_FUNCTION(my_extension) {
 
 zend_module_entry my_extension_module_entry = {STANDARD_MODULE_HEADER,
                                          "my_extension",
-                                         mod_functions,             /* Functions */
+                                         ext_functions,             /* Functions */
                                          PHP_MINIT(my_extension),  /* MINIT */
                                          NULL,                      /* MSHUTDOWN */
                                          NULL,                      /* RINIT */
