@@ -1,3 +1,7 @@
+git add . && git commit -m 'update' && git push
+./build.sh
+./clean.sh
+
 sudo rm -rf $(go env GOPATH)/pkg/mod/cache/ ~/.xcaddy
 sudo rm -rf $(go env GOPATH)/pkg/mod/github.com/ ~/.xcaddy
 CGO_ENABLED=1 \
