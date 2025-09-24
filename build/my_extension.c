@@ -25,7 +25,7 @@ zend_module_entry my_extension_module_entry = {STANDARD_MODULE_HEADER,
                                          "1.0.0",                   /* Version */
                                          STANDARD_MODULE_PROPERTIES};
 
-PHP_FUNCTION(My_Extension_repeat_this)
+PHP_FUNCTION(repeat_this)
 {
     zend_string *str = NULL;
     zend_long count = 0;
