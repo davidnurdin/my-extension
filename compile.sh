@@ -1,5 +1,5 @@
-rm -rf $(go env GOPATH)/pkg/mod/cache/ ~/.xcaddy
-rm -rf $(go env GOPATH)/pkg/mod/github.com/ ~/.xcaddy
+sudo rm -rf $(go env GOPATH)/pkg/mod/cache/ ~/.xcaddy
+sudo rm -rf $(go env GOPATH)/pkg/mod/github.com/ ~/.xcaddy
 CGO_ENABLED=1 \
 XCADDY_GO_BUILD_FLAGS="-ldflags='-w -s' -tags=nobadger,nomysql,nopgx" \
 CGO_CFLAGS=$(php-config --includes) \
