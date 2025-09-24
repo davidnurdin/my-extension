@@ -1,3 +1,4 @@
+sudo rm -rf /home/david/go/pkg/mod/github.com/davidnurdin/
 CGO_ENABLED=1 \
 XCADDY_GO_BUILD_FLAGS="-ldflags='-w -s' -tags=nobadger,nomysql,nopgx" \
 CGO_CFLAGS=$(php-config --includes) \
