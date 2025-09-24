@@ -1,3 +1,4 @@
+//export_php:namespace My\Extension
 package main
 
 import (
