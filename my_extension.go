@@ -2,6 +2,7 @@
 package main
 
 import (
+    "unsafe"
     "C"
     "github.com/dunglas/frankenphp"
     "strings"

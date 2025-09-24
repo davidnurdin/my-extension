@@ -5,6 +5,7 @@ package my_extension
 #include "my_extension.h"
 */
 import "C"
+import "unsafe"
 import "github.com/dunglas/frankenphp"
 import "strings"
 
