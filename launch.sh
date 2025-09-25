@@ -1,1 +1,1 @@
-./frankenphp php-cli test.php
+./myfranken php-cli test.php
