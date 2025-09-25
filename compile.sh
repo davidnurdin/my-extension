@@ -1,6 +1,6 @@
-git add . && git commit -m 'update' && git push
-./build.sh
 ./clean.sh
+./create.sh
+git add . && git commit -m 'update' && git push
 
 sudo rm -rf $(go env GOPATH)/pkg/mod/cache/ ~/.xcaddy
 sudo rm -rf $(go env GOPATH)/pkg/mod/github.com/ ~/.xcaddy
