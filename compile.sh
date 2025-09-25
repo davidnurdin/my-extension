@@ -1,12 +1,12 @@
-./clean.sh
+#!/bin/bash
+
+
+# ./clean.sh
 ./create.sh
 git add . && git commit -m 'update' && git push
-sudo rm -rf $(go env GOPATH)/pkg/mod/cache/ ~/.xcaddy
-sudo rm -rf $(go env GOPATH)/pkg/mod/github.com/ ~/.xcaddy
-
-go get -u github.com/davidnurdin/my-extension/build
-
-
+#sudo rm -rf $(go env GOPATH)/pkg/mod/cache/ ~/.xcaddy
+#sudo rm -rf $(go env GOPATH)/pkg/mod/github.com/ ~/.xcaddy
+#go get -u github.com/davidnurdin/my-extension/build
 rm ./myfranken
 
 LAST=$(git rev-parse --short HEAD)
