@@ -2,6 +2,8 @@ module github.com/davidnurdin/my-extension
 
 go 1.25.1
 
+replace github.com/davidnurdin/my-extension/build => /home/david/poc/my_extension/my_extension/build
+
 require github.com/dunglas/frankenphp v1.9.1
 
 require (
