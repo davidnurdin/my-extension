@@ -21,5 +21,5 @@ xcaddy build \
   --with github.com/dunglas/frankenphp/caddy \
   --with github.com/dunglas/mercure/caddy \
   --with github.com/dunglas/vulcain/caddy \
-  --with github.com/davidnurdin/my-extension/build/@LAST
+  --with github.com/davidnurdin/my-extension/build/@$LAST
 
